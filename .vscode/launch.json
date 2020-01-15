@@ -7,11 +7,14 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "プログラムの起動",
+      "name": "Debug",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/start"
+      "args": ["${workspaceFolder}/src/main.ts"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector"
     }
   ]
 }
